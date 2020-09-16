@@ -69,5 +69,10 @@
   },
   "setupFiles": [
     "<rootDir>/src/setupTests.js"
-  ]
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && tslint --project tsconfig.json --config tslint.json"
+    }
+  }
 }
