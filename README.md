@@ -42,3 +42,6 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Cypress Integration Tests Result
+[![react-hello-world](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/detailed/d1x5d2/master&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/d1x5d2/runs)

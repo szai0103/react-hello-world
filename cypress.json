@@ -1,0 +1,7 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "integrationFolder": "cypress/integration/my-tests",
+  "video": false,
+  "screenshotOnRunFailure": false,
+  "projectId": "d1x5d2"
+}
