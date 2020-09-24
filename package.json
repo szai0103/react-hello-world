@@ -1,8 +1,9 @@
 {
   "name": "react-hello-world",
-  "version": "0.1.1",
+  "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@commitlint/config-conventional": "^11.0.0",
     "@cypress/instrument-cra": "^1.3.2",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -32,7 +33,7 @@
   },
   "scripts": {
     "start": "react-scripts -r @cypress/instrument-cra start",
-    "prebuild": "npm --no-git-tag-version version patch",
+    "release": "standard-version",
     "build": "react-scripts build",
     "test": "nyc mocha",
     "eject": "react-scripts eject",
@@ -42,7 +43,8 @@
     "cypress": "cypress open",
     "cypress:coverage": "npx nyc report --reporter=text-summary",
     "cypress:lcov": "nyc report --reporter=lcov --reporter=text",
-    "cypress:record": "cypress run --record --key 241d041b-707e-4122-bdb6-1417591faa0f"
+    "cypress:record": "cypress run --record --key 241d041b-707e-4122-bdb6-1417591faa0f",
+    "semantic-release": "semantic-release"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -65,6 +67,7 @@
     "@typescript-eslint/parser": "^4.1.1",
     "add": "^2.0.6",
     "babel-plugin-istanbul": "^6.0.0",
+    "commitizen": "^4.2.1",
     "cypress": "^5.2.0",
     "eslint": "^6.6.0",
     "eslint-config-airbnb": "^18.2.0",
@@ -74,17 +77,23 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.6",
     "eslint-plugin-react-hooks": "^4.0.0",
-    "nyc": "^15.1.0"
+    "nyc": "^15.1.0",
+    "semantic-release": "^17.1.2"
   },
   "setupFiles": [
     "<rootDir>/src/setupTests.js"
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && tslint --project tsconfig.json --config tslint.json"
+      "pre-commit": "npm run lint",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "nyc": {
     "exclude": "src/serviceWorker.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/szai0103/react-hello-world.git"
   }
 }
