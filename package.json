@@ -17,14 +17,11 @@
     "cross-env": "^7.0.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
-    "eslint-config-prettier": "^6.11.0",
     "eslint-config-react": "^1.1.7",
-    "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-sonarjs": "^0.5.0",
     "husky": "^4.3.0",
     "jest-enzyme": "^7.1.2",
     "lint-staged": "^10.3.0",
-    "prettier": "^2.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3",
@@ -35,12 +32,11 @@
     "start": "react-scripts -r @cypress/instrument-cra start",
     "release": "standard-version",
     "build": "react-scripts build",
-    "test": "nyc mocha",
+    "test": "cypress open",
     "eject": "react-scripts eject",
     "format": "prettier --write src/**/*.ts{,x}",
     "lint": "tsc --noEmit && eslint src/**/*.ts{,x}",
     "lint-warn": "eslint --ext .ts --ext .tsx . -c .eslintrc.warn.json",
-    "cypress": "cypress open",
     "cypress:coverage": "npx nyc report --reporter=text-summary",
     "cypress:lcov": "nyc report --reporter=lcov --reporter=text",
     "cypress:record": "cypress run --record --key 241d041b-707e-4122-bdb6-1417591faa0f",
@@ -63,8 +59,8 @@
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.8.1",
-    "@typescript-eslint/eslint-plugin": "^4.1.1",
-    "@typescript-eslint/parser": "^4.1.1",
+    "@typescript-eslint/eslint-plugin": "^4.2.0",
+    "@typescript-eslint/parser": "^4.2.0",
     "add": "^2.0.6",
     "babel-plugin-istanbul": "^6.0.0",
     "commitizen": "^4.2.1",
@@ -72,12 +68,15 @@
     "eslint": "^6.6.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-airbnb-typescript": "^10.0.0",
+    "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-jest": "^24.0.1",
+    "eslint-plugin-jest": "^24.0.2",
     "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.2",
     "eslint-plugin-react-hooks": "^4.0.0",
     "nyc": "^15.1.0",
+    "prettier": "^2.1.2",
     "semantic-release": "^17.1.2"
   },
   "setupFiles": [
@@ -90,7 +89,7 @@
     }
   },
   "nyc": {
-    "exclude": "src/serviceWorker.js"
+    "exclude": "src/serviceWorker.ts"
   },
   "repository": {
     "type": "git",

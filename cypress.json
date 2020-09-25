@@ -3,5 +3,6 @@
   "integrationFolder": "cypress/integration/my-tests",
   "video": false,
   "screenshotOnRunFailure": false,
-  "projectId": "d1x5d2"
+  "projectId": "d1x5d2",
+  "ignoreTestFiles": "src/serviceWorker.ts"
 }
